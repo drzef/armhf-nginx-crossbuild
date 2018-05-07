@@ -1,6 +1,6 @@
-FROM drzedx/base-alpine-armhf
+FROM resin/raspberrypi3-alpine
 
-RUN ["/usr/bin/cross-build-start"]
+RUN ["cross-build-start"]
 
 ENV NGINX_VERSION 1.12.2
 
@@ -135,7 +135,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 COPY https://raw.githubusercontent.com/nginxinc/docker-nginx/72ac2226580ee73c170163dbe6e4436373b6ece9/stable/alpine/nginx.conf /etc/nginx/nginx.conf
 COPY https://raw.githubusercontent.com/nginxinc/docker-nginx/72ac2226580ee73c170163dbe6e4436373b6ece9/stable/alpine/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
-RUN ["/usr/bin/cross-build-end"]
+RUN ["cross-build-end"]
 
 EXPOSE 80
 
